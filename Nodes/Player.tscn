@@ -9,12 +9,14 @@ albedo_color = Color( 0.776471, 0.603922, 0.0862745, 1 )
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -0.25, -0.25, -0.25, 0.25, 0.25, 0.25, 0.25, -0.25, 0.25, 0.25, 0.25, -0.25, -0.25, 0.25, 0.25, 0.25, -0.25, -0.25, -0.25, -0.25, 0.25, -0.25, 0.25, -0.25 )
 
-[node name="Player" type="RigidBody"]
+[node name="Spatial" type="Spatial"]
 
-[node name="Cube" type="MeshInstance" parent="."]
+[node name="RigidBody" type="RigidBody" parent="."]
+
+[node name="Cube" type="MeshInstance" parent="RigidBody"]
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 shape = SubResource( 2 )
