@@ -7,3 +7,4 @@
 - Slide down a slope and avoide obstacles
 - Jump to the rhythm of the music
 - Player has a few seconds to find an hidden target in a crowded scene
+- The game consists of scaring a hunter to shoot targets in the air
