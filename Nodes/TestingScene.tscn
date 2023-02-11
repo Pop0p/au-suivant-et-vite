@@ -1,18 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=1]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 20, 20 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.403922, 0.403922, 0.403922, 1 )
 
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -1.00542, 0.00546448, -1.00546, 1.00546, 0.00546448, 1.00546, -1.00542, 0.00546448, 1.00546, 1.00546, 0.00546448, -1.00546 )
 
 [node name="TestingScene" type="Spatial"]
 
-[node name="KinematicBody" type="KinematicBody" parent="."]
+[node name="Ground" type="KinematicBody" parent="."]
 
-[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
 
-[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
 shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 2.5, 2.5 )
