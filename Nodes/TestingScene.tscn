@@ -8,8 +8,8 @@ size = Vector2( 20, 20 )
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.403922, 0.403922, 0.403922, 1 )
 
-[sub_resource type="ConvexPolygonShape" id=2]
-points = PoolVector3Array( -1.00542, 0.00546448, -1.00546, 1.00546, 0.00546448, 1.00546, -1.00542, 0.00546448, 1.00546, 1.00546, 0.00546448, -1.00546 )
+[sub_resource type="ConvexPolygonShape" id=4]
+points = PoolVector3Array( -10.0546, 0.0546448, -10.0546, 10.0546, 0.0546448, 10.0546, -10.0546, 0.0546448, 10.0546, 10.0546, 0.0546448, -10.0546 )
 
 [node name="TestingScene" type="Spatial"]
 
@@ -21,7 +21,7 @@ skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
